@@ -52,6 +52,20 @@ public class StackQueue {
         }
         tempNode.next = newQueue;
     }
+
+    public void popQ(){
+            if(head == null){
+                if(head == null){
+                    System.out.println(" the list is empty");
+                    System.out.println(" the list is empty");
+                    return;
+                }
+            }
+            head = head.next;
+        }
+
+
+
     public static void main (String[] args){
         System.out.println("Welcome to Stack & Queue Practice Problem");
         StackQueue ll = new StackQueue();
@@ -59,5 +73,9 @@ public class StackQueue {
         ll.pushQ(30);
         ll.pushQ(70);
         ll.printNode();
+        System.out.println("After applying Pop operation-----------");
+        ll.popQ();
+        ll.printNode();
+
 
 }}
