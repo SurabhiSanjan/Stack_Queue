@@ -31,12 +31,23 @@ public class StackQueue {
         newStack.next = head;
         head = newStack;
     }
+
+    public void pop(){
+        if(head == null){
+            System.out.println(" the list is empty");
+            return;
+        }
+        head = head.next;
+    }
     public static void main (String[] args){
         System.out.println("Welcome to Stack & Queue Practice Problem");
         StackQueue ll = new StackQueue();
         ll.push(70);
         ll.push(30);
         ll.push(56);
+        ll.printNode();
+        ll.pop();
+        System.out.println("After performing POP operation--------");
         ll.printNode();
 
 }}
