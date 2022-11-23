@@ -20,7 +20,7 @@ public class StackQueue {
             System.out.print(tempNode.data + "=>");
             tempNode = tempNode.next;
         }
-        System.out.println("null  is our current Stack");
+        System.out.println("null  is our current Queue");
     }
     public void push(int data){
         Stack newStack = new Stack(data);
@@ -39,15 +39,25 @@ public class StackQueue {
         }
         head = head.next;
     }
+
+    public void pushQ(int data) {
+        Stack newQueue = new Stack(data);
+        if (head == null) {
+            head = newQueue;
+            return;
+        }
+        Stack tempNode = head;
+        while(tempNode.next != null){
+            tempNode= tempNode.next;
+        }
+        tempNode.next = newQueue;
+    }
     public static void main (String[] args){
         System.out.println("Welcome to Stack & Queue Practice Problem");
         StackQueue ll = new StackQueue();
-        ll.push(70);
-        ll.push(30);
-        ll.push(56);
-        ll.printNode();
-        ll.pop();
-        System.out.println("After performing POP operation--------");
+        ll.pushQ(56);
+        ll.pushQ(30);
+        ll.pushQ(70);
         ll.printNode();
 
 }}
