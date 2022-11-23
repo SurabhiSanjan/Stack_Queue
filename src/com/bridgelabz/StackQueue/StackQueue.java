@@ -22,9 +22,21 @@ public class StackQueue {
         }
         System.out.println("null  is our current Stack");
     }
-    
+    public void push(int data){
+        Stack newStack = new Stack(data);
+        if(head == null){
+            head = newStack;
+            return;
+        }
+        newStack.next = head;
+        head = newStack;
+    }
     public static void main (String[] args){
         System.out.println("Welcome to Stack & Queue Practice Problem");
         StackQueue ll = new StackQueue();
+        ll.push(70);
+        ll.push(30);
+        ll.push(56);
+        ll.printNode();
 
 }}
